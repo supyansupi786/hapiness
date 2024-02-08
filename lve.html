@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love</title>
+
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .move {
+            margin-top: 60px;
+            margin-bottom: 10px;
+        }
+
+        #imageContainer {
+          
+            margin-top: 10px;
+            width: 320px;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        #selectedImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="imageContainer">
+        <img id="selectedImage" src="" alt="Selected Image">
+    </div>
+
+    <form>
+        <select class="move" id="videoQualitySelect" onchange="changeImage()">
+            <option ></option>
+            <option value="144p">144p</option>
+            <option value="240p">240p</option>
+            <option value="480p">480p</option>
+            <option value="720p">720p</option>
+            <option value="1080p">1080p</option>
+        </select>
+    </form>
+
+    <script>
+        function changeImage() {
+            var select = document.getElementById("videoQualitySelect");
+            var selectedOption = select.options[select.selectedIndex].value;
+            var selectedImage = document.getElementById("selectedImage");
+
+            // Set image source based on selected option
+            switch (selectedOption) {
+                case "144p":
+                    selectedImage.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKEvCA-ZtjLwx_pwIZoXdFZeqCtXM1Qt1kptkNNn1XlQ0U7IU8dG9AYkA4FyddvUOARTDwMPfWtVtUpZXyp7h9EjtBUVtCuql1mVOPk8C2aW6-fBa5Nra1Vw4lV1kaO6K7-uiSnt-uP_8rgpsod5PaiMvyZsmiuQIJYdj_LzExcZ9bPrLnBUTJ6h5IGLsG/s320/1707366996078.png";
+                    break;
+                case "240p":
+                    selectedImage.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4lRSWzFXRlL9iXB7TFRQME4v8qkku0er7Xlu2EJKjdiqzBFwHJZrttfLDqbyrJvsODVH8t_o4YLlpmZfBpBc7amzUhrHYD_99qxJttbOeHGM67w4O-UE5ZHtMR0QEwHGDowLX84Tn59FIXsninEy4ehtOcIwBTak3sKTkNt1Mk3JmueQ3j3W2TZp6alJU/w280-h280/1707366996141.jpg";
+                    break;
+                case "480p":
+                    selectedImage.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikXiJZrBDVaTriohbIhcAHdnPtgZFwqxREnC4JPdvTnryZsmbs-uprRZGbWP1UJccBcfz4vjUpTlkObqKlFj5_IYTCUK9dPqVnNDa_S7Hx9VQwfDrHv0tIDllH-8B3_A_g_lGAj_xerEwBnMNQVsRon_GtuR4FqkpVCpWcE9PNFB9swTMbIk4fB_p_W-mp/s320/1707366996222.jpg";
+                    break;
+                case "720p":
+                    selectedImage.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeZsmiy6v2nftcuWypXzw4gHkqbeIc9mOkjspIfXXAJ1_MmC3JWOkzLi-lFxhP1WaMQh6VlYQ28QH38oIgHl7Yj21cLSUXKeyT6XqdBFP6By42-UUKMoVcegX2jzI9FAFaxfppCxhr2ZlSNd3NDpcpyGrFYnN8YsdfDZwF1068gG243f6kg0sjVzAmoBAL/s320/1707366996010.jpg";
+                    break;
+                case "1080p":
+                    selectedImage.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPz1aguNQC_bA7XvDPcZPF3-FuBmBaDbm6Jo22wfVkpRYOlVkgd2fcqcztM2W9AMn8i8Czj_F7STrDk95FEVctdGOLUUNB9B8l-VXvTjYW6RsqKw6YbNyAH9Ms_f3ZLp5LwnrXZyE_v5LYk_Nv0X2k5Jt9778xSk01eRyNsBBdYxiDid9T1V_ZUfI3ES4u/s320/1707366995922.jpg";
+                    break;
+                default:
+                    // Clear the image source if no option is selected
+                    selectedImage.src = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
